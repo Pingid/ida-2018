@@ -1,0 +1,23 @@
+{
+  "name": "ida-2018",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "basscss": "^8.0.4",
+    "cipher-base": "^1.0.4",
+    "google-spreadsheet-to-json": "^1.0.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-motion": "^0.5.2",
+    "react-p5-wrapper": "^0.0.4",
+    "react-scripts": "1.1.4",
+    "spreadsheet-to-json": "^1.2.0",
+    "styled-components": "^2.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
