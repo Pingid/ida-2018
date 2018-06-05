@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class HoverImage extends React.Component {
 	constructor() {
@@ -18,14 +19,19 @@ export default class HoverImage extends React.Component {
 		const { selected } = this.props;
 		const { mouse } = this.state;
 
-		return (
-			<div className="fixed">
-				{ selected && (
-					<div style={{ transform: `translate(${mouse.x - 100}px, ${mouse.y}px)` }}>
-						<h1>{selected.yourName}</h1>
-					</div>
-				)}
+		return selected ? (
+			<div
+				className="absolute center"
+				style={{
+					cursor: 'none',
+					zindex: 1000,
+					width: 200,
+					transform: `translate(${mouse.x - 100}px, ${mouse.y - 40}px)` }}>
+				<Link to={`/project/${selected.slug}`}>
+						<h2>{selected.projectName}</h2>
+						<p>By: {selected.yourName}</p>
+				</Link>
 			</div>
-		);
+		) : null;
 	}
 }

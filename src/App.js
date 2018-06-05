@@ -1,34 +1,25 @@
 import React, { Component } from 'react';
-import Axes from './components/Axes';
-import Spread from './components/Spread';
-import Canvas from './components/Canvas';
-import HoverImage from './components/HoverImage';
+
+import InteractiveMap from './components/InteractiveMap';
+import ProjectTiles from './components/ProjectTiles';
 
 import 'basscss/css/basscss.css';
-import { getSheet } from './utils/spreadsheet';
 
 class App extends Component {
-  state = { people: [], selected: null }
-  componentDidMount() {
-    getSheet()
-      .then(people => 
-        this.setState({ 
-          people: people
-            .filter(x => x.projectName && x.mapCoOrdinates) 
-            .map(x => Object.assign({}, x, { slug: x.yourName.replace(/\s|,\s/gi, '-').toLowerCase() }))
-        })
-      );
-  }
+  state = { selected: null }
   render() {
-    const { people, selected } = this.state;
+    const { projects } = this.props;
+    const { selected } = this.state;
+    const selectedProject = projects.filter(x => x.slug === selected)[0] || null;
 
     return (
       <div>
-      	<div>
-        	<Axes />
-          <Canvas people={people} select={this.handleSelect.bind(this)}/>
-          <HoverImage selected={people.filter(x => x.slug === selected)[0] || null} />
-        </div>
+        <InteractiveMap 
+          projects={projects} 
+          selected={selectedProject} 
+          select={this.handleSelect.bind(this)} />
+        <ProjectTiles 
+          projects={projects} />
       </div>
     );
   }

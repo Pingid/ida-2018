@@ -67,11 +67,11 @@ export default ({ width, height, marginX, marginY, p, color, select }) => {
   };
 
   p.myCustomRedrawAccordingToNewPropsHandler = function (props) {
-    if (points.length < 1 && props.people.length > 2) {
+    if (points.length < 1 && props.projects.length > 2) {
       const xCoord = str => marginX / 2 + (width - marginX) * (parseInt(str.match(/(?<=\().*(?=,)/gi)[0]) + 100) / 200;
       const yCoord = str => marginY / 2 + (height - marginY) * (parseInt(str.match(/(?<=,).*(?=\))/gi)[0]) + 100) / 200;
 
-      points = props.people.map(p => 
+      points = props.projects.map(p => 
         new Dot(
           {
             x: xCoord(p.mapCoOrdinates),

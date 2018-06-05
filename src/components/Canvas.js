@@ -15,12 +15,12 @@ export default class Canvas extends React.Component {
 		window.removeEventListener('resize', this.handleResize);
 	}
 	shouldComponentUpdate(props, state) {
-		if (this.props.people.length !== props.people.length) return true;
+		if (this.props.projects.length !== props.projects.length) return true;
 		return false;
 	}
 	handleResize() { this.forceUpdate() }
 	render() {
-		const { people, select } = this.props;
+		const { projects, select } = this.props;
 
 		const marginX = 100;
 		const marginY = 100;
@@ -28,8 +28,8 @@ export default class Canvas extends React.Component {
 		const height = window.innerHeight;
 
 		return (
-			<div className="fixed w100 h100 border-box" style={{ zIndex: -2, top: 0, left: 0 }}>
-				<P5 people={people} sketch={p => dotSketch({
+			<div className="absolute w100 h100 border-box" style={{ zIndex: -2, top: 0, left: 0 }}>
+				<P5 projects={projects} sketch={p => dotSketch({
 					p,
 					width, 
 					height, 
