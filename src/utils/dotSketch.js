@@ -57,7 +57,6 @@ class Dot extends Spring {
 
 
 export default ({ width, height, marginX, marginY, p, color, select }) => {
-  const size = 10;
   const ringSize = 10;
   let points = [];
   let selected = null;

@@ -9,11 +9,12 @@ const Tile = styled.div`
 `;
 
 export default ({ projects }) => {
+	console.log('render')
 	return (
 		<div className="flex justify-center items-center">
 			<div className="flex flex-wrap" style={{ margin: '0 auto', maxWidth: '50rem' }}>
 				{ projects.map(x => (
-						<Tile>
+						<Tile key={x.slug}>
 							<Link to={`/project/${x.slug}`}>
 								<p className="center">{x.projectName}</p>
 							</Link>

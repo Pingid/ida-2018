@@ -5,12 +5,14 @@ export default class HoverImage extends React.Component {
 	constructor() {
 		super();
 		this.state = { mouse: { x: 0, y: 0 }};
+
+		this.handleMousePos = this.handleMousePos.bind(this)
 	}
 	componentDidMount() {
-		window.addEventListener('mousemove', this.handleMousePos.bind(this));
+		window.addEventListener('mousemove', this.handleMousePos);
 	}
-	componentWillDismount() {
-		window.removeEventListener('mousemove', this.handleMousePos.bind(this))
+	componentWillUnmount() {
+		window.removeEventListener('mousemove', this.handleMousePos)
 	}
 	handleMousePos(e) {
 		this.setState({ mouse: { x: e.clientX, y: e.clientY }});

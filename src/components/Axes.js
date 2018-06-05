@@ -27,31 +27,27 @@ const Text = styled.div`
 	padding: 0 .5rem;
 	white-space: nowrap;
 `
-const Center = styled.div`
-	position: absolute;
-	margin-left: 50%;
-	height: 0;
-	border: .5rem solid blue;
-	background: blue;
-`;
 
-export default () => {
-	return (
-		<div className="px3 absolute border-box w100 h100 flex flex-column justify-center items-center">
-			<div className="absolute w100 h100 flex justify-center items-center">
-				<XCross>
-					<Text>Fiction</Text>
-					<DashLine />
-					<Text>Reality</Text>
-				</XCross>
+export default class Axes extends React.Component {
+	shouldComponentUpdate(newprops, oldProps) { return false; }
+	render() {
+		return (
+			<div className="px3 absolute border-box w100 h100 flex flex-column justify-center items-center">
+				<div className="absolute w100 h100 flex justify-center items-center">
+					<XCross>
+						<Text>Fiction</Text>
+						<DashLine />
+						<Text>Reality</Text>
+					</XCross>
+				</div>
+				<div className="absolute w100 h100 flex justify-center items-center">
+					<YCross>
+						<Text>Outcome-led</Text>
+						<DashLine />
+						<Text>process-led</Text>
+					</YCross>
+				</div>
 			</div>
-			<div className="absolute w100 h100 flex justify-center items-center">
-				<YCross>
-					<Text>Outcome-led</Text>
-					<DashLine />
-					<Text>process-led</Text>
-				</YCross>
-			</div>
-		</div>
-	)
+		)
+	}
 }
