@@ -39,7 +39,7 @@ export default class Axes extends React.Component {
 
 		return (
 			<div className="absolute" style={{ zIndex: -5 }}>
-				<div style={{background: '#EF652F'}} className="absolute w100 h100 flex flex-wrap justify-between items-center">
+				<div style={{background: 'white'}} className="absolute w100 h100 flex flex-wrap justify-between items-center">
 					<Square style={{ top: -.5, left: -.5 }} />
 					<Square style={{ top: -.5, left: .5 }} />
 					<Square style={{ top: .5, left: -.5 }} />

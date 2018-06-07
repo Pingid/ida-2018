@@ -40,7 +40,7 @@ export default class HoverImage extends React.Component {
 							width: size - x,
 							height: size - x,
 							// background: 'black',
-							border: '1px solid white',
+							// border: '1px solid white',
 							borderRadius: '50%',
 							color: 'black',
 							transform: `translate(${mouse.x - (size - x) / 2}px, ${mouse.y - (size - x) / 2}px)` }}>
@@ -50,7 +50,7 @@ export default class HoverImage extends React.Component {
 								color: 'white',
 								width: size,
 								height: size,
-								clipPath: `circle(${(size / 2 - 5) - (x / 2)}px at center)`
+								clipPath: `circle(${(size / 2 - 5)}px at center)`
 							}}>
 								<Link className="nocursor" to={`/project/${selected.slug}`}>
 									<h3 className="nocursor m0">{selected.projectName}</h3>

@@ -108,7 +108,8 @@ export default ({ width, height, marginX, marginY, p, color, select, lineDistanc
         if ((ring1.pos.x === ring2.pos.x) && (ring1.pos.y === ring2.pos.y)) return;
         if (p.dist(ring1.pos.x, ring1.pos.y, ring2.pos.x, ring2.pos.y) < lineDistanceLimmit) {
           p.stroke(p.color('#EF652F'))
-          p.strokeWeight(.5)
+          p.stroke(p.color(255,255,255))
+          p.strokeWeight(.2)
           p.line(ring1.pos.x, ring1.pos.y, ring2.pos.x, ring2.pos.y)
         }
       })

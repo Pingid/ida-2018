@@ -7,24 +7,13 @@ export default class Canvas extends React.Component {
 	constructor() {
 		super();
 		this.state = { selected: null };
-
-		this.handleResize = this.handleResize.bind(this);
-	}
-	componentDidMount() {
-		window.addEventListener('resize', this.handleResize)
 	}
 	componentWillUnmount() {
-		console.log('unmount')
-		window.removeEventListener('resize', this.handleResize);
 		if (this.p5) { this.p5.remove() }
 	}
 	shouldComponentUpdate(props, state) {
 		if (this.props.projects.length !== props.projects.length) return true;
 		return false;
-	}
-	handleResize() { 
-		console.log('resize')
-		this.forceUpdate() 
 	}
 	render() {
 		const { projects, select } = this.props;
