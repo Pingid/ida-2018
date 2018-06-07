@@ -11,16 +11,20 @@ export default class InteractiveMap extends React.Component {
 		const { selected } = this.state;
 
 		const selectedProject = projects.filter(x => x.slug === selected)[0] || null;
+		console.log(selected)
 		return (
 			<div className="w100 h100">
 				<Axes />
-	      <Canvas projects={projects} select={this.handleSelect.bind(this)}/>
-	      <HoverImage selected={selectedProject} />
+	      <Canvas
+	      	projects={projects} 
+	      	select={this.handleSelect.bind(this)} />
+	      { <HoverImage selected={selectedProject} /> }
 			</div>
 		);
 	}
 	handleSelect(x) {
     if (this.state.selected === x) return;
+		console.log(x, 'handleSelect')
     return this.setState({ selected: x });
   }
 }

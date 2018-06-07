@@ -9,18 +9,21 @@ import registerServiceWorker from './utils/registerServiceWorker';
 
 import { getSheet } from './utils/spreadsheet';
 
+import data from './data.json';
+
+const sort = projects => projects
+	.filter(x => x.projectName && x.mapCoOrdinates) 
+  .map(x => Object.assign({}, x, { slug: x.yourName.replace(/\s|,\s/gi, '-').toLowerCase() }));
 
 class Routes extends React.Component {
-	state = { projects: [] }
+	state = { projects: sort(data) }
   componentDidMount() {
-    getSheet()
-      .then(projects => 
-        this.setState({ 
-          projects: projects
-            .filter(x => x.projectName && x.mapCoOrdinates) 
-            .map(x => Object.assign({}, x, { slug: x.yourName.replace(/\s|,\s/gi, '-').toLowerCase() }))
-        })
-      );
+    // getSheet()
+    //   .then(projects => 
+    //     this.setState({ 
+    //       projects: sort(projects)
+    //     })
+    //   );
   }
 	render() {
 		const { projects } = this.state;

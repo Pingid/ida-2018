@@ -4,6 +4,11 @@ body {
   font-family: helvetica, sans-serif;
 }
 
+.nocursor { cursor: none; }
+
+a { text-decoration: none; color: inherit; }
+a:visited { color: inherit; }
+a:active { color: inherit; }
 .w100 { width: 100vw; }
 .h100 { height: 100vh; }
 .wfit { width: 100%; }

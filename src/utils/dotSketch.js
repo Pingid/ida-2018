@@ -39,15 +39,22 @@ class Dot extends Spring {
     const vec = p.createVector(p.mouseX - this.pos.x, p.mouseY -  this.pos.y)
     const dist = vec.mag();
     this.dist = dist;
-    if (dist < 3) return;
- 
+    // if (dist < 5 && p.mouseIsPressed) { this.targetSize = 40; return;} 
+    if (dist < 3) return; // If mouse is within 3 of center dont move dot
+    
+    // Update spring
     super.update(p);
 
     if (dist < this.size / 2 + 100) {
       this.pos = p.createVector(this.pos.x, this.pos.y)
         .sub(vec.normalize().mult(10 * -1/dist))
     }
-
+    if (this.targetSize && Math.abs(this.targetSize - this.size) > 2) {
+      this.size += (this.targetSize - this.size) / 2
+    }
+  }
+  changeSize(to) {
+    this.targetSize = to;
   }
   display(p) {
     p.ellipse(this.pos.x, this.pos.y, this.size, this.size);
@@ -55,14 +62,17 @@ class Dot extends Spring {
 }
 
 
+const ringSize = 10;
+let points = [];
+let selected = null;
+let cnv;
+let mouseDown = false;
+let clicked = false;
 
-export default ({ width, height, marginX, marginY, p, color, select }) => {
-  const ringSize = 10;
-  let points = [];
-  let selected = null;
-
+export default ({ width, height, marginX, marginY, p, color, select, lineDistanceLimmit }) => {
   p.setup = function () {
-    p.createCanvas(width, height);
+    console.log(p)
+    cnv = p.createCanvas(width, height);
   };
 
   p.myCustomRedrawAccordingToNewPropsHandler = function (props) {
@@ -85,7 +95,7 @@ export default ({ width, height, marginX, marginY, p, color, select }) => {
 
   p.draw = function () {
     p.clear()
-    p.background(p.color(255,255,255));
+    // p.background(p.color(255,255,255));
     p.strokeWeight(1)
     p.noFill()
     p.stroke(p.color(255,255,255))
@@ -93,23 +103,30 @@ export default ({ width, height, marginX, marginY, p, color, select }) => {
     selected = null;
 
     points.forEach((ring1, i1) => {
-      // Draw Dot
-      p.fill(p.color(color))
-      ring1.update(p);
-      ring1.display(p);
-
       // Draw Lines
       points.forEach((ring2, i2) => {
         if ((ring1.pos.x === ring2.pos.x) && (ring1.pos.y === ring2.pos.y)) return;
-        if (p.dist(ring1.pos.x, ring1.pos.y, ring2.pos.x, ring2.pos.y) < 300) {
-          p.stroke(p.color(color))
-          p.strokeWeight(.1)
+        if (p.dist(ring1.pos.x, ring1.pos.y, ring2.pos.x, ring2.pos.y) < lineDistanceLimmit) {
+          p.stroke(p.color('#EF652F'))
+          p.strokeWeight(.5)
           p.line(ring1.pos.x, ring1.pos.y, ring2.pos.x, ring2.pos.y)
         }
       })
+    })
 
+    points.forEach((ring1) => {
       // Check if mouse is over any dots 
-      if (ring1.dist < ringSize) { selected = ring1.data.slug; }
+      if (ring1.dist < ringSize) {
+        ring1.changeSize(1)
+        selected = ring1.data.slug; 
+      } else { ring1.changeSize(ringSize) }
+
+      // Draw Dot
+      p.stroke(p.color(255,255,255))
+      p.strokeWeight(1)
+      p.fill(p.color(color))
+      ring1.update(p);
+      ring1.display(p);
     })
     select(selected)
   };
