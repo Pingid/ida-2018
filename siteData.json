@@ -1,0 +1,9 @@
+{
+  "name": "Riccardo Canella",
+  "short_name": "RCanella",
+  "start_url": "/",
+  "background_color": "#282828",
+  "theme_color": "#282828",
+  "display": "standalone",
+  "icon": "src/imgs/icon.png"
+}

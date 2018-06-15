@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'FunctionProBook'; /*a name to be used later*/
+  src: url('../fonts/FunctionPro-Book.otf'); /*URL to font*/
+}
+
+@font-face {
+  font-family: 'FunctionProDemi'; /*a name to be used later*/
+  src: url('../fonts/FunctionPro-Demi.otf'); /*URL to font*/
+}
+
+@font-face {
+  font-family: 'FunctionProBold'; /*a name to be used later*/
+  src: url('../fonts/FunctionPro-Bold.otf'); /*URL to font*/
+}
+
+@font-face {
+  font-family: 'FunctionProMedium'; /*a name to be used later*/
+  src: url('../fonts/FunctionPro-Medium.otf'); /*URL to font*/
+}
+
+@font-face {
+  font-family: 'FunctionProLight'; /*a name to be used later*/
+  src: url('../fonts/FunctionPro-Light.otf'); /*URL to font*/
+}

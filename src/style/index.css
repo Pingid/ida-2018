@@ -1,0 +1,9 @@
+body {
+	font-family: 'FunctionProDemi', helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.w100 { width: 100vw; }
+.h100 { height: 100vh; }
+.topleft { top: 0; left: 0; }
