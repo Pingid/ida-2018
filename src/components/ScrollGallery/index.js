@@ -39,8 +39,8 @@ class ScrollGallery extends React.Component {
 						ref={elem => this.scrollElem = elem}>
 						{ 
 							images.map((x, i) => (
-								<div key={x} className="flex items-center justify-center border-box" style={{ width: '100%', height: '100%', flex: '0 0 auto', padding: '2.5vw' }}>
-									<img src={x} />
+								<div key={x.srcSet} className="flex items-center justify-center border-box" style={{ width: '100%', height: '100%', flex: '0 0 auto', padding: '2.5vw' }}>
+									<img srcSet={x.srcSet} />
 								</div>
 							))
 						}

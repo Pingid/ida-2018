@@ -1,7 +1,7 @@
 const pixrem = require('pixrem');
 const autoprefixer = require('autoprefixer');
 
-const siteData = require('./src/data/site.json');
+const siteData = require('./assets/data/site.json');
 
 const manifestOptions = {
   name: siteData.title,
@@ -81,7 +81,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${__dirname}/src/data/`,
+        path: `${__dirname}/assets`,
       },
     },
           ]

@@ -11,11 +11,11 @@ const yCoord = str => (parseInt(str.match(/(?<=,).*(?=\))/gi)[0]) + 100) / 200;
 const nameFromFile = n => n.match(/.+?(?=[0-9\.])/) && n.match(/.+?(?=[0-9\.])/)[0]
 const images = R.compose(
 		R.filter(file => /\.jpg/.test(file))
-	)(fs.readdirSync(path.resolve(__dirname, './src/imgs/project-images')));
+	)(fs.readdirSync(path.resolve(__dirname, '../src/imgs/project-images')));
 
 const gifs = R.compose(
 		R.map(file => file.replace(/\.gif/gi, ''))
-	)(fs.readdirSync(path.resolve(__dirname, './src/imgs/gifs')));
+	)(fs.readdirSync(path.resolve(__dirname, '../src/imgs/gifs')));
 
 const sort = projects => projects
 	.filter(x => x.projectName && x.mapCoOrdinates) 

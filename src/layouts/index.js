@@ -6,7 +6,7 @@ import 'basscss/css/basscss.css';
 import "../style/fonts.css";
 import "../style/index.css";
 
-import siteData from '../data/site.json';
+import siteData from '../../assets/data/site.json';
 
 class TemplateWrapper extends Component {
   render() {

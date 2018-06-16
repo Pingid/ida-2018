@@ -1,0 +1,10 @@
+{
+  "title": "Liminal Degree Show",
+  "description": "Degree show for Interaction Design Arts 2018",
+  "short_title": "Liminal",
+  "url": "ida2018.netlify.com",
+  "start_url": "/",
+  "background_color": "#282828",
+  "theme_color": "#282828",
+  "display": "standalone"
+}
