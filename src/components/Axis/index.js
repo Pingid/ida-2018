@@ -34,24 +34,17 @@ const Square = styled.div`
 `
 
 export default class Axes extends React.Component {
-	shouldComponentUpdate(newprops, oldProps) { return false; }
 	render() {
-
+		const { left, top, right, bottom } = this.props;
 		return (
 			<div className="absolute" style={{ pointerEvents: 'none', zIndex: 0, top: 0, left: 0 }}>
-				<div className="absolute w100 h100 flex flex-wrap justify-between items-center">
-					<Square style={{ top: -.5, left: -.5 }} />
-					<Square style={{ top: -.5, left: .5 }} />
-					<Square style={{ top: .5, left: -.5 }} />
-					<Square style={{ top: .5, left: .5 }} />
-				</div>
 				<div className="absolute border-box w100 h100 flex justify-between items-center">
-					<Text>Fiction</Text>
-					<div className="h100 flex flex-column justify-between">
-						<Text>Outcome-led</Text>
-						<Text>process-led</Text>
+					<Text>{left}</Text>
+					<div className="h100 flex flex-column justify-between center">
+						<Text>{top}</Text>
+						<Text>{bottom}</Text>
 					</div>
-					<Text>Reality</Text>
+					<Text>{right}</Text>
 				</div>
 			</div>
 		)

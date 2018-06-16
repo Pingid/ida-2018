@@ -45,6 +45,8 @@ module.exports = {
     title: siteData.title,
   },
   plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`,
     {

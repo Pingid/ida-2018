@@ -57,11 +57,16 @@ export default class Index extends Component {
     const innerWidth = typeof window === "undefined" ? 0 : window.innerWidth;
     const innerHeight = typeof window === "undefined" ? 0 : window.innerHeight;
 
+    const selectedProject = projects.filter(x => x.slug === selected)[0] || null;
     return (
       <div>
         <div className="w100 h100" style={{ background: 'white' }}>
-          { selected && <HoverGIF selected={selected} /> }
-          <Axis />
+          { (selected && selectedProject.hasGif) ? <HoverGIF selected={selected} /> : null }
+          <Axis 
+            left={selected ? selectedProject.yourName.split(' ')[0] : 'Fiction'}
+            top={selected ? selectedProject.projectName : 'Outcome-led'}
+            right={selected ? selectedProject.yourName.split(' ')[1] : 'Reality'}
+            bottom={selected ? selectedProject['projectType/materials'] : 'Process-led'}/>
           <Diagram
             margin={200}
             width={innerWidth}
@@ -93,6 +98,7 @@ export const pageQuery = graphql`
             y
           }
           yourName
+          hasGif
           projectName
         }
       }

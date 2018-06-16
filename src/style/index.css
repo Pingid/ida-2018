@@ -4,6 +4,19 @@ body {
 	padding: 0;
 }
 
+h1 {
+	font-size: 70px;
+}
+
+p {
+	font-family: 'FunctionProBook', helvetica, sans-serif;
+}
+img { width: 100% }
+
+.f-light { font-family: 'FunctionProLight', helvetica, sans-serif; }
+
+.wfit { width: 100%; }
+.hfit { height: 100%; }
 .w100 { width: 100vw; }
 .h100 { height: 100vh; }
 .topleft { top: 0; left: 0; }

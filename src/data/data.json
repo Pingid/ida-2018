@@ -5,14 +5,17 @@
     "wordDescription": "Inorganisms is an immersive installation exploring object oriented ontology and the nature of human disruption. It is made up of a series of interactive kinetic sculptures: each sculpture has an output that affects the next sculpture’s behaviour, which creates a chain reaction that builds up, leaving a self-sustaining ecosystem of inorganic organisms living in a state of symbiosis. The sculptures are based on natural traits observed in the animal and plant kingdoms, investigating where the given affordances of everyday objects converge with organic behaviours. This ultimately forms a design fiction, aiming to provide an answer to the question: What if objects evolved to exist in the form that they do, rather than having been designed?",
     "projectType/materials": "Mixed Media Kinetic Sculptures",
     "socialMedia/websiteLinks": "www.luisacharles.com",
+    "videoLink": "https://vimeo.com/275317800",
     "mapCoOrdinates": "(-70, -60)",
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Luisa Charles>Luisa.gif",
     "gifs": "Luisa.gif",
     "slug": "luisa-charles",
+    "hasGif": true,
     "coordinates": {
       "x": 0.15,
       "y": 0.2
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Harvey Miles",
@@ -23,10 +26,12 @@
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Harvey Miles>Harvey.gif",
     "gifs": "Harvey.gif",
     "slug": "harvey-miles",
+    "hasGif": true,
     "coordinates": {
       "x": 0.225,
       "y": 0.05
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Cheung Pui Nei",
@@ -35,10 +40,12 @@
     "mapCoOrdinates": "(-80, -80)",
     "gifs": "Guillaume.gif",
     "slug": "cheung-pui-nei",
+    "hasGif": false,
     "coordinates": {
       "x": 0.1,
       "y": 0.1
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Guillaume Querard",
@@ -48,10 +55,12 @@
     "mapCoOrdinates": "(-30, -90)",
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Guillaume Querard>Guillaume.gif",
     "slug": "guillaume-querard",
+    "hasGif": true,
     "coordinates": {
       "x": 0.35,
       "y": 0.05
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Ka Kwan Ng",
@@ -63,10 +72,14 @@
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Ka Kwan Ng>Karen.gif",
     "gifs": "Ka Kwan Ng/Karen.gif",
     "slug": "ka-kwan-ng",
+    "hasGif": true,
     "coordinates": {
       "x": 0.39,
       "y": 0
-    }
+    },
+    "images": [
+      "ka-kwan-ng.jpg"
+    ]
   },
   {
     "yourName": "Naina Thada Magar",
@@ -78,10 +91,12 @@
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Naina Thada Magar>Naina.gif",
     "gifs": "Naina.gif",
     "slug": "naina-thada-magar",
+    "hasGif": true,
     "coordinates": {
       "x": 0.415,
       "y": 0.085
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Yae Jin Hong",
@@ -93,10 +108,12 @@
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Yae Jin Hong>Yae-Jin.gif",
     "gifs": "Yae-Jin.gif",
     "slug": "yae-jin-hong",
+    "hasGif": true,
     "coordinates": {
       "x": 0.665,
       "y": 0.115
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Lou-Anne Le Mener",
@@ -107,10 +124,14 @@
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Lou-Anne Le Mener>Lou.gif",
     "gifs": "Lou.gif",
     "slug": "lou-anne-le-mener",
+    "hasGif": true,
     "coordinates": {
       "x": 0.88,
       "y": 0
-    }
+    },
+    "images": [
+      "lou-anne-le-mener01.jpg"
+    ]
   },
   {
     "yourName": "Lisa Melkumov",
@@ -122,10 +143,12 @@
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Lisa Melkumov>Lisa.gif",
     "gifs": "Lisa.gif",
     "slug": "lisa-melkumov",
+    "hasGif": true,
     "coordinates": {
       "x": 0.765,
       "y": 0.26
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Florence Zhou",
@@ -138,10 +161,12 @@
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Florence Zhou>Florence.gif",
     "gifs": "Florence.gif",
     "slug": "florence-zhou",
+    "hasGif": true,
     "coordinates": {
       "x": 0.565,
       "y": 0.37
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Jiyoon Kim",
@@ -153,10 +178,12 @@
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Jiyoon Kim>JiYoon.gif",
     "gifs": "JiYoon.gif",
     "slug": "jiyoon-kim",
+    "hasGif": true,
     "coordinates": {
       "x": 0.435,
       "y": 0.43
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Luisa Charles & Miryana Ivanova",
@@ -166,10 +193,12 @@
     "mapCoOrdinates": "(-20, 22)",
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Luisa Charles & Miryana Ivanova>Luisa & Miryana.gif",
     "slug": "luisa-charles-&-miryana-ivanova",
+    "hasGif": true,
     "coordinates": {
       "x": 0.4,
       "y": 0.61
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Miryana Ivanova",
@@ -180,10 +209,14 @@
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Miryana Ivanova>Miryana.gif",
     "gifs": "Miryana.gif",
     "slug": "miryana-ivanova",
+    "hasGif": true,
     "coordinates": {
       "x": 0.645,
       "y": 0.645
-    }
+    },
+    "images": [
+      "miryana-ivanova05.jpg"
+    ]
   },
   {
     "yourName": "Jason Ekonomou",
@@ -194,10 +227,12 @@
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Jason Ekonomou>Jason.gif",
     "gifs": "Jason.gif",
     "slug": "jason-ekonomou",
+    "hasGif": true,
     "coordinates": {
       "x": 0.7,
       "y": 0.77
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Lisa Melkumov & Lou-Anne Le Mener",
@@ -208,10 +243,12 @@
     "mapCoOrdinates": "(64, 13)",
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Lisa Melkumov & Lou-Anne Le Mener>Lisa and Lou-Anne.gif",
     "slug": "lisa-melkumov-&-lou-anne-le-mener",
+    "hasGif": true,
     "coordinates": {
       "x": 0.82,
       "y": 0.565
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Abdullah Habib, Ewa Winiarczyk, Vanya Cantone",
@@ -221,14 +258,16 @@
     "mapCoOrdinates": "(90, 50)",
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Abdullah Habib, Ewa Winiarczyk, Vanya Cantone>Abdullah and Co.gif",
     "slug": "abdullah-habib-ewa-winiarczyk-vanya-cantone",
+    "hasGif": true,
     "coordinates": {
       "x": 0.95,
       "y": 0.75
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Lucio Martus Alonso",
-    "projectName": "Out of Pocket",
+    "projectName": "Silhouette",
     "wordDescription": "One of the biggest challenges as a student in London is facing how to finance and live in the big city. In this installation I aim to showcase the data I have been recording for the last three years of my degree. With this, visitors are invited to explore my experience and my adaptation into independance in an interactive and visual experience. Each piece represents a payment made, which all together create a visual scale of where the money went. And with each graph showing different aspects of consumption, people will be able to see where  the money went and how I spent it.",
     "projectType/materials": "Screen-based Installation",
     "socialMedia/websiteLinks": "https://www.behance.net/lumartus950a3f, Instagram/Twitter: @luciomartus",
@@ -236,10 +275,12 @@
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Lucio Martus Alonso>Lucio.gif",
     "gifs": "Lucio.gif",
     "slug": "lucio-martus-alonso",
+    "hasGif": true,
     "coordinates": {
       "x": 1,
       "y": 0.835
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Ashmi Mridul",
@@ -249,10 +290,19 @@
     "mapCoOrdinates": "(95, 95)",
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Ashmi Mridul>Ashmi.gif",
     "slug": "ashmi-mridul",
+    "hasGif": true,
     "coordinates": {
       "x": 0.975,
       "y": 0.975
-    }
+    },
+    "images": [
+      "ashmi-mridul01.jpg",
+      "ashmi-mridul02.jpg",
+      "ashmi-mridul03.jpg",
+      "ashmi-mridul04.jpg",
+      "ashmi-mridul05.jpg",
+      "ashmi-mridul06.jpg"
+    ]
   },
   {
     "yourName": "Clovis Bataille",
@@ -263,10 +313,12 @@
     "mapCoOrdinates": "(70, 100)",
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Clovis Bataille>Clovis.gif",
     "slug": "clovis-bataille",
+    "hasGif": true,
     "coordinates": {
       "x": 0.85,
       "y": 1
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Tianyi Liu",
@@ -277,10 +329,12 @@
     "mapCoOrdinates": "(-23, 70)",
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Tianyi Liu>Tiyani.gif",
     "slug": "tianyi-liu",
+    "hasGif": true,
     "coordinates": {
       "x": 0.385,
       "y": 0.85
-    }
+    },
+    "images": []
   },
   {
     "yourName": "J Whitehead",
@@ -291,10 +345,20 @@
     "mapCoOrdinates": "(-20, 50)",
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>J Whitehead>New J.gif",
     "slug": "j-whitehead",
+    "hasGif": true,
     "coordinates": {
       "x": 0.4,
       "y": 0.75
-    }
+    },
+    "images": [
+      "j-whitehead02.jpg",
+      "j-whitehead04.jpg",
+      "j-whitehead05.jpg",
+      "j-whitehead06.jpg",
+      "j-whitehead10.jpg",
+      "j-whitehead11.jpg",
+      "j-whitehead12.jpg"
+    ]
   },
   {
     "yourName": "Yi Tian",
@@ -304,10 +368,12 @@
     "mapCoOrdinates": "(77, 77)",
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Yi Tian>Yi.gif",
     "slug": "yi-tian",
+    "hasGif": true,
     "coordinates": {
       "x": 0.885,
       "y": 0.885
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Nicoleta Faina",
@@ -319,10 +385,12 @@
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Nicoleta Faina>Nicoleta.gif",
     "gifs": "Nicoleta.gif",
     "slug": "nicoleta-faina",
+    "hasGif": true,
     "coordinates": {
       "x": 0.075,
       "y": 0.86
-    }
+    },
+    "images": []
   },
   {
     "yourName": "Ewa Winiarczyk",
@@ -333,9 +401,16 @@
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Ewa Winiarczyk>Ewa.gif",
     "gifs": "Ewa.gif",
     "slug": "ewa-winiarczyk",
+    "hasGif": true,
     "coordinates": {
       "x": 0.4,
       "y": 0.875
-    }
+    },
+    "images": [
+      "ewa-winiarczyk01.jpg",
+      "ewa-winiarczyk02.jpg",
+      "ewa-winiarczyk03.jpg",
+      "ewa-winiarczyk04.jpg"
+    ]
   }
 ]

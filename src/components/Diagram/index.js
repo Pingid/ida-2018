@@ -97,6 +97,6 @@ export default class Home extends Component {
     );
   }
   handleMouseMove(e) {
-    this.mouse = { x: e.clientX, y: e.clientY };
+    this.mouse = { x: e.clientX, y: e.clientY + document.documentElement.scrollTop || document.body.scrollTop };
   }
 }
