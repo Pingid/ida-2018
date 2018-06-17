@@ -54,14 +54,24 @@ export default class Index extends Component {
       .map(x => x.node)
       .filter(x => x.coordinates);
     
+    const gifImages = this.props.data.gifImages.edges
+      .map(x => x.node.childImageSharp);
+    const selectedGifImage = gifImages.filter(x => new RegExp(selected).test(x.resolutions.src))[0] || null;
+
+    const gifs = this.props.data.gifs.edges
+      .map(x => x.node.base);
+    const selectedGif = gifs.filter(x => new RegExp(selected).test(x))[0] || null;
+
+
     const innerWidth = typeof window === "undefined" ? 0 : window.innerWidth;
     const innerHeight = typeof window === "undefined" ? 0 : window.innerHeight;
 
     const selectedProject = projects.filter(x => x.slug === selected)[0] || null;
+
     return (
       <div>
         <div className="w100 h100" style={{ background: 'white' }}>
-          { (selected && selectedProject.hasGif) ? <HoverGIF selected={selected} /> : null }
+          { (selected && selectedProject.hasGif) ? <HoverGIF selected={selected} gif={selectedGif} preload={selectedGifImage} /> : null }
           <Axis 
             left={selected ? selectedProject.yourName.split(' ')[0] : 'Fiction'}
             top={selected ? selectedProject.projectName : 'Outcome-led'}
@@ -88,7 +98,32 @@ export default class Index extends Component {
 }
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query IndexQueryAndGifImages {
+    gifs: allFile(filter: { relativeDirectory: { eq: "optimised" } }) {
+      edges {
+        node {
+          base
+        }
+      }
+    }
+    gifImages: allFile(filter: { relativeDirectory: { eq: "gif-pic" } }) {
+      edges {
+        node {
+          childImageSharp {
+            ... on ImageSharp {
+              resolutions(width: 1000) {
+                base64
+                aspectRatio
+                width
+                height
+                src
+                srcSet
+              }
+            }
+          }
+        }
+      }
+    }
     allDataJson {
       edges {
         node {

@@ -8,6 +8,7 @@
     "classnames": "^2.2.6",
     "fullpage-react": "^3.0.33",
     "gatsby": "^1.9.223",
+    "gatsby-image": "^1.0.54",
     "gatsby-link": "^1.6.38",
     "gatsby-plugin-favicon": "^2.1.1",
     "gatsby-plugin-google-analytics": "^1.0.31",
@@ -44,6 +45,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^8.6.2",
+    "gatsby-remark-copy-linked-files": "^1.5.37",
+    "gatsby-transformer-remark": "^1.7.44",
     "google-spreadsheet-to-json": "^1.0.0",
     "pixrem": "^4.0.1",
     "prettier": "^1.11.1",

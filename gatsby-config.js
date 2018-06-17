@@ -50,6 +50,12 @@ module.exports = {
     `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: 'gatsby-remark-copy-linked-files',
+      options: {
+        destinationDir: 'src/imgs',
+      }
+    },
+    {
       resolve: `gatsby-plugin-postcss-sass`,
       options: {
         postCssPlugins: [

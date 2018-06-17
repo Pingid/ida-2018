@@ -2,9 +2,8 @@ import React from 'react';
 import { navigateTo } from 'gatsby-link';
 import LazyGif from '../LazyGif';
 
-export default ({ selected }) => {
-	const preloadSRC = require(`../../imgs/frame-200/${selected}.png`) || null;
-	const gifSRC = require(`../../imgs/gifs/${selected}.gif`) || null;
+export default ({ selected, gif, preload }) => {
+	const gifSRC = require(`../../imgs/optimised/${gif}`) || null;
 	return (
 		<div
 			onClick={() => navigateTo('project/' + selected + '?animate')}
@@ -16,7 +15,7 @@ export default ({ selected }) => {
 				width: '95vw',
 				height: 'calc(100vh - 5vw)',
 			}}>
-			<LazyGif preload={preloadSRC} gif={gifSRC} />
+			<LazyGif preload={preload.resolutions.base64} gif={gifSRC} />
 		</div>
 	)
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Img from 'gatsby-image';
 
 export default class LazyGif extends React.Component {
 	state = { loaded: false }
@@ -10,16 +11,17 @@ export default class LazyGif extends React.Component {
 	}
 	render() {
 		const { preload, gif } = this.props;
-		return <div 
-			style={{
-				width: '100%',
-				height: '100%',
-				// filter: 'brightness(120%)',
-				backgroundImage: `url(${this.state.loaded ? gif : preload})`,
-				backgroundSize: 'cover',
-				backgroundRepeat: 'no-repeat',
-				backgroundPosition: 'center center',
-			}}
-		/>
+		return (
+			<div 
+				style={{
+					width: '100%',
+					height: '100%',
+					backgroundImage: `url(${this.state.loaded ? gif : preload})`,
+					backgroundSize: 'cover',
+					backgroundRepeat: 'no-repeat',
+					backgroundPosition: 'center center',
+				}}
+			/>
+		)
 	}
 }
