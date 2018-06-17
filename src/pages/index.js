@@ -53,9 +53,11 @@ export default class Index extends Component {
     const projects = this.props.data.allDataJson.edges
       .map(x => x.node)
       .filter(x => x.coordinates);
+    const selectedProject = projects.filter(x => x.slug === selected)[0] || null;
     
     const gifImages = this.props.data.gifImages.edges
-      .map(x => x.node.childImageSharp);
+      .map(x => x.node.childImageSharp)
+      .filter(x => x);
     const selectedGifImage = gifImages.filter(x => new RegExp(selected).test(x.resolutions.src))[0] || null;
 
     const gifs = this.props.data.gifs.edges
@@ -66,12 +68,12 @@ export default class Index extends Component {
     const innerWidth = typeof window === "undefined" ? 0 : window.innerWidth;
     const innerHeight = typeof window === "undefined" ? 0 : window.innerHeight;
 
-    const selectedProject = projects.filter(x => x.slug === selected)[0] || null;
 
+    // console.log(selected, selectedGifImage, selectedGif)
     return (
       <div>
         <div className="w100 h100" style={{ background: 'white' }}>
-          { (selected && selectedProject.hasGif) ? <HoverGIF selected={selected} gif={selectedGif} preload={selectedGifImage} /> : null }
+          { (selected && selectedGifImage && selectedGif) ? <HoverGIF selected={selected} gif={selectedGif} preload={selectedGifImage} /> : null }
           <Axis 
             left={selected ? selectedProject.yourName.split(' ')[0] : 'Fiction'}
             top={selected ? selectedProject.projectName : 'Outcome-led'}
@@ -86,7 +88,7 @@ export default class Index extends Component {
             isMobile={isMobile}
             onSelect={this.handleSelect} />
         </div>
-        <Home />
+        <Home projects={projects} />
       </div>
     );
   }
@@ -111,7 +113,7 @@ export const pageQuery = graphql`
         node {
           childImageSharp {
             ... on ImageSharp {
-              resolutions(width: 1000) {
+              resolutions(width: 200) {
                 base64
                 aspectRatio
                 width

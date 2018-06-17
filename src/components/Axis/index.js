@@ -33,18 +33,26 @@ const Square = styled.div`
 	background: transparent;
 `
 
+const Title = styled.h1`
+	color: ${({ active }) => active ? 'rgba(255, 65, 4, 1)' : 'rgba(255, 255, 255, .1)'};
+	font-size: 20vw;
+	margin: 0;
+	transition: .2s;
+`;
+
 export default class Axes extends React.Component {
 	render() {
 		const { left, top, right, bottom } = this.props;
 		return (
 			<div className="absolute" style={{ pointerEvents: 'none', zIndex: 0, top: 0, left: 0 }}>
 				<div className="absolute border-box w100 h100 flex justify-between items-center">
-					<Text>{left}</Text>
-					<div className="h100 flex flex-column justify-between center">
+					<Text style={{ width: '20rem' }}>{left}</Text>
+					<div className="h100 flex flex-column justify-between center" style={{ }}>
 						<Text>{top}</Text>
-						<Text>{bottom}</Text>
+						<Title active={bottom}>liminal</Title>
+						<Text>{bottom}-</Text>
 					</div>
-					<Text>{right}</Text>
+					<Text style={{ width: '20rem', textAlign: 'right' }}>{right}</Text>
 				</div>
 			</div>
 		)

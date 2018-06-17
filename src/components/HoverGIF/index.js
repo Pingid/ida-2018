@@ -3,7 +3,7 @@ import { navigateTo } from 'gatsby-link';
 import LazyGif from '../LazyGif';
 
 export default ({ selected, gif, preload }) => {
-	const gifSRC = require(`../../imgs/optimised/${gif}`) || null;
+	const gifSRC = require(`../../imgs/optimised-200/${gif}`) || null;
 	return (
 		<div
 			onClick={() => navigateTo('project/' + selected + '?animate')}

@@ -9,9 +9,6 @@ const xCoord = str => (parseInt(str.match(/(?<=\().*(?=,)/gi)[0]) + 100) / 200;
 const yCoord = str => (parseInt(str.match(/(?<=,).*(?=\))/gi)[0]) + 100) / 200;
 
 const nameFromFile = n => n.match(/.+?(?=[0-9\.])/) && n.match(/.+?(?=[0-9\.])/)[0]
-const images = R.compose(
-		R.filter(file => /\.jpg/.test(file))
-	)(fs.readdirSync(path.resolve(__dirname, '../src/imgs/project-images')));
 
 const gifs = R.compose(
 		R.map(file => file.replace(/\.gif/gi, ''))
@@ -27,16 +24,11 @@ const sort = projects => projects
 			y: yCoord(x.mapCoOrdinates)
   	}
   }))
-  .map(x => {
-		const assets = images.filter(y => nameFromFile(y) === x.slug)
-		if (assets) return Object.assign({}, x, { images: assets })
-		return x;
-	})
 	
 
 gsjson({ spreadsheetId: spreadsheetID })
 	.then(data => sort(data))
-	.then(data => fs.writeFile('./src/data/data.json', JSON.stringify(data, null, 2), (err) =>{
+	.then(data => fs.writeFile(path.resolve(__dirname, '../assets/data/data.json'), JSON.stringify(data, null, 2), (err) =>{
 		if (err) return console.log(err);
 		return console.log('success');
 	}))

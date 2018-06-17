@@ -15,8 +15,8 @@
 	top: 2.5vw;
 	left: 2.5vw;
 	width: calc(100vw - 5vw);
-	font-size: 90px;
-	color: white;
+	font-size: 7vw;
+	color: rgba(255, 255, 255, .7);
 }
 
 .gif-wrapper {

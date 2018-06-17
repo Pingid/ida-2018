@@ -4,7 +4,7 @@ const { exec } = require('child_process');
 const rimraf = require('rimraf');
 const argv = require('minimist')(process.argv.slice(2));
 
-const folder = path.resolve(__dirname, '../src/imgs');
+const folder = path.resolve(__dirname, '../assets');
 
 const prms = (comm) => (...args) =>
 	new Promise((resolve, reject) => {
@@ -16,27 +16,26 @@ const prms = (comm) => (...args) =>
 
 const files = fs.readdirSync(path.resolve(folder, 'gifs'))
 	.map(file => path.resolve(folder, 'gifs', file))
-	.filter(x => /\.gif/.test(x));
+	.filter(x => /\.gif/.test(x))
+	// .filter(x => /luisa-charles-and-miryana-ivanova\.gif/.test(x))
 
 const command = (width, input, output) => `gifsicle --resize-width ${width} -i ${input} -o ${output}`;
-const extractPNG = (input, output, size) => `magick ${input}[0] -resize ${size} ${output}`
-const optimise = (input, output, size = 500, quality = 50, fuzz = 2) => `convert ${input} -quality ${quality}% -resize ${size} -fuzz ${fuzz}% -layers Optimize ${output}`;
+const extractPNG = (input, output) => `magick ${input}[0] ${output}`
+const optimise = (input, output, size = 200, quality = 10, fuzz = 2) => `convert ${input} -quality ${quality}% -resize ${size} -fuzz ${fuzz}% -layers Optimize ${output}`;
 
-const extractAllFirst = (size) => {
-	const outDir = path.resolve(folder, `./frame-${size}`);
-	new Promise((resolve, reject) => 
-		rimraf(outDir, () => resolve('done')))
-	.then(x => fs.mkdirSync(outDir))
-	.then(() => Promise.all(files.map(file => extractPNG(file, path.resolve(outDir, path.basename(file.replace('.gif', '.png'))), size))))
-	// .then(() => extractPNG(files[1], path.resolve(outDir, path.basename(files[1].replace('.gif', '.png'))), size))
-	.then(x => x.map(com => exec(com, (err) => console.log('com', err))))
-	.catch(err => console.log('err', err))
+const extractAllFirst = () => {
+	const outDir = path.resolve(folder, `./gif-pic`);
+	Promise.resolve('')
+		.then(() => Promise.all(files.map(file => prms(extractPNG)(file, path.resolve(outDir, path.basename(file.replace('.gif', '.png')))))))
+		// .then(() => extractPNG(files[1], path.resolve(outDir, path.basename(files[1].replace('.gif', '.png'))), size))
+		.then(x => x.map(com => exec(com, (err) => console.log('com', err))))
+		.catch(err => console.log('err', err))
 }
 
 const optimiseAll = () => {
 	const outDir = path.resolve(folder, `./optimised`);
-	new Promise((resolve, reject) => rimraf(outDir, () => resolve('done')))
-		.then(x => fs.mkdirSync(outDir))
+	
+	Promise.resolve('')
 		.then(() => Promise.all(files.slice(0, 100).map(file => 
 			prms(optimise)(file, path.resolve(outDir, path.basename(file)))
 				.then(x => console.log('done', file))
@@ -47,9 +46,10 @@ const optimiseAll = () => {
 		.catch(err => console.log('err', err))
 }
 
+// prms(optimise)('')
 optimiseAll();
+// extractAllFirst();
 // console.log(path.basename(files[1]))
-// extractAllFirst(200)
 // convertAll(800, 25)
 // const settings = process.argv.reduce((a, b) => {
 // 	if (/--/.test())

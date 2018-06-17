@@ -14,8 +14,7 @@
     "coordinates": {
       "x": 0.15,
       "y": 0.2
-    },
-    "images": []
+    }
   },
   {
     "yourName": "Harvey Miles",
@@ -30,8 +29,7 @@
     "coordinates": {
       "x": 0.225,
       "y": 0.05
-    },
-    "images": []
+    }
   },
   {
     "yourName": "Cheung Pui Nei",
@@ -44,8 +42,7 @@
     "coordinates": {
       "x": 0.1,
       "y": 0.1
-    },
-    "images": []
+    }
   },
   {
     "yourName": "Guillaume Querard",
@@ -59,8 +56,7 @@
     "coordinates": {
       "x": 0.35,
       "y": 0.05
-    },
-    "images": []
+    }
   },
   {
     "yourName": "Ka Kwan Ng",
@@ -68,6 +64,7 @@
     "wordDescription": "In the U.K. we use 7 million disposable paper cups everyday, that is 5 paper cups every minute. HOURGLASS is a time capsule that drops 5 wooden beads every minute, onto a reusable Keep Cup. The goal is to demonstrate the unsustainable living, and the mass consumption of paper cups we undergo every day. HOURGLASS also allow us to perceive TIME, we see how many minutes have passed by counting how many paper cups have been wasted.",
     "projectType/materials": "Mixed Media Physical Computing Piece",
     "socialMedia/websiteLinks": "www.ngkakwan.com",
+    "videoLink": "https://vimeo.com/268565303",
     "mapCoOrdinates": "(-22, -100)",
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Ka Kwan Ng>Karen.gif",
     "gifs": "Ka Kwan Ng/Karen.gif",
@@ -76,10 +73,7 @@
     "coordinates": {
       "x": 0.39,
       "y": 0
-    },
-    "images": [
-      "ka-kwan-ng.jpg"
-    ]
+    }
   },
   {
     "yourName": "Naina Thada Magar",
@@ -95,8 +89,7 @@
     "coordinates": {
       "x": 0.415,
       "y": 0.085
-    },
-    "images": []
+    }
   },
   {
     "yourName": "Yae Jin Hong",
@@ -112,8 +105,7 @@
     "coordinates": {
       "x": 0.665,
       "y": 0.115
-    },
-    "images": []
+    }
   },
   {
     "yourName": "Lou-Anne Le Mener",
@@ -128,10 +120,7 @@
     "coordinates": {
       "x": 0.88,
       "y": 0
-    },
-    "images": [
-      "lou-anne-le-mener01.jpg"
-    ]
+    }
   },
   {
     "yourName": "Lisa Melkumov",
@@ -147,8 +136,7 @@
     "coordinates": {
       "x": 0.765,
       "y": 0.26
-    },
-    "images": []
+    }
   },
   {
     "yourName": "Florence Zhou",
@@ -165,8 +153,7 @@
     "coordinates": {
       "x": 0.565,
       "y": 0.37
-    },
-    "images": []
+    }
   },
   {
     "yourName": "Jiyoon Kim",
@@ -182,23 +169,21 @@
     "coordinates": {
       "x": 0.435,
       "y": 0.43
-    },
-    "images": []
+    }
   },
   {
-    "yourName": "Luisa Charles & Miryana Ivanova",
+    "yourName": "Luisa Charles and Miryana Ivanova",
     "projectName": "Simulating a Degree",
     "wordDescription": "The Sims is a life simulation sand box type game, which lacks any defined goals. It lets its players build homes, mould characters from scratch and control their lives in a virtual world. \nIn this gameplay of the Sims, you are given the power of controlling each one of the 27 characters who resemble the likeness and interests of the 27 students who are presenting their projects right here, right now. ",
     "projectType/materials": "Game Based Simulation",
     "mapCoOrdinates": "(-20, 22)",
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Luisa Charles & Miryana Ivanova>Luisa & Miryana.gif",
-    "slug": "luisa-charles-&-miryana-ivanova",
-    "hasGif": true,
+    "slug": "luisa-charles-and-miryana-ivanova",
+    "hasGif": false,
     "coordinates": {
       "x": 0.4,
       "y": 0.61
-    },
-    "images": []
+    }
   },
   {
     "yourName": "Miryana Ivanova",
@@ -213,10 +198,7 @@
     "coordinates": {
       "x": 0.645,
       "y": 0.645
-    },
-    "images": [
-      "miryana-ivanova05.jpg"
-    ]
+    }
   },
   {
     "yourName": "Jason Ekonomou",
@@ -231,24 +213,22 @@
     "coordinates": {
       "x": 0.7,
       "y": 0.77
-    },
-    "images": []
+    }
   },
   {
-    "yourName": "Lisa Melkumov & Lou-Anne Le Mener",
+    "yourName": "Lisa Melkumov and Lou-Anne Le Mener",
     "projectName": "Beyond Plastic",
     "wordDescription": "The photographic essay ‘Beyond Plastic’ highlights the increasing market of love dolls and their verisimilitude to humans. By documenting the life of a lovedoll, this piece explores the degrees of intimacy and imagination that can be achieved with such uncanny objects.",
     "projectType/materials": "Photo Book & Digital photography",
     "socialMedia/websiteLinks": "\n@lisamelkumovphotography www.lisamelkumov.wix.com/photoandesign\n",
     "mapCoOrdinates": "(64, 13)",
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Lisa Melkumov & Lou-Anne Le Mener>Lisa and Lou-Anne.gif",
-    "slug": "lisa-melkumov-&-lou-anne-le-mener",
-    "hasGif": true,
+    "slug": "lisa-melkumov-and-lou-anne-le-mener",
+    "hasGif": false,
     "coordinates": {
       "x": 0.82,
       "y": 0.565
-    },
-    "images": []
+    }
   },
   {
     "yourName": "Abdullah Habib, Ewa Winiarczyk, Vanya Cantone",
@@ -262,8 +242,7 @@
     "coordinates": {
       "x": 0.95,
       "y": 0.75
-    },
-    "images": []
+    }
   },
   {
     "yourName": "Lucio Martus Alonso",
@@ -279,8 +258,7 @@
     "coordinates": {
       "x": 1,
       "y": 0.835
-    },
-    "images": []
+    }
   },
   {
     "yourName": "Ashmi Mridul",
@@ -294,15 +272,7 @@
     "coordinates": {
       "x": 0.975,
       "y": 0.975
-    },
-    "images": [
-      "ashmi-mridul01.jpg",
-      "ashmi-mridul02.jpg",
-      "ashmi-mridul03.jpg",
-      "ashmi-mridul04.jpg",
-      "ashmi-mridul05.jpg",
-      "ashmi-mridul06.jpg"
-    ]
+    }
   },
   {
     "yourName": "Clovis Bataille",
@@ -317,8 +287,7 @@
     "coordinates": {
       "x": 0.85,
       "y": 1
-    },
-    "images": []
+    }
   },
   {
     "yourName": "Tianyi Liu",
@@ -333,8 +302,7 @@
     "coordinates": {
       "x": 0.385,
       "y": 0.85
-    },
-    "images": []
+    }
   },
   {
     "yourName": "J Whitehead",
@@ -349,16 +317,7 @@
     "coordinates": {
       "x": 0.4,
       "y": 0.75
-    },
-    "images": [
-      "j-whitehead02.jpg",
-      "j-whitehead04.jpg",
-      "j-whitehead05.jpg",
-      "j-whitehead06.jpg",
-      "j-whitehead10.jpg",
-      "j-whitehead11.jpg",
-      "j-whitehead12.jpg"
-    ]
+    }
   },
   {
     "yourName": "Yi Tian",
@@ -372,8 +331,7 @@
     "coordinates": {
       "x": 0.885,
       "y": 0.885
-    },
-    "images": []
+    }
   },
   {
     "yourName": "Nicoleta Faina",
@@ -389,8 +347,7 @@
     "coordinates": {
       "x": 0.075,
       "y": 0.86
-    },
-    "images": []
+    }
   },
   {
     "yourName": "Ewa Winiarczyk",
@@ -405,12 +362,6 @@
     "coordinates": {
       "x": 0.4,
       "y": 0.875
-    },
-    "images": [
-      "ewa-winiarczyk01.jpg",
-      "ewa-winiarczyk02.jpg",
-      "ewa-winiarczyk03.jpg",
-      "ewa-winiarczyk04.jpg"
-    ]
+    }
   }
 ]
