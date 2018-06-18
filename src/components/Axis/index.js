@@ -23,8 +23,7 @@ const DashLine = styled.div`
 const Text = styled.div`
 	text-transform: uppercase;
 	padding: .5rem;
-
-	color: black;
+	color: #797676;
 `
 const Square = styled.div`
 	position: relative;

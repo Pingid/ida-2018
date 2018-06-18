@@ -12,21 +12,21 @@ const manifestOptions = {
   display: siteData.display
 }
 
-// const faviconOptions = {
-//   logo: "./src/imgs/favicon.png",
-//   injectHTML: true,
-//   icons: {
-//     android: true,
-//     appleIcon: true,
-//     appleStartup: true,
-//     coast: false,
-//     favicons: true,
-//     firefox: true,
-//     twitter: false,
-//     yandex: false,
-//     windows: false
-//   }
-// }
+const faviconOptions = {
+  logo: "./src/imgs/icon.png",
+  injectHTML: true,
+  icons: {
+    android: true,
+    appleIcon: true,
+    appleStartup: true,
+    coast: false,
+    favicons: true,
+    firefox: true,
+    twitter: false,
+    yandex: false,
+    windows: false
+  }
+}
 
 const analyticsOptions = {
   trackingId: "UA-120787679-1",
@@ -71,10 +71,10 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: manifestOptions,
     },
-    // {
-    //   resolve: `gatsby-plugin-favicon`,
-    //   options: faviconOptions
-    // },
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: faviconOptions
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: analyticsOptions

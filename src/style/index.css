@@ -2,8 +2,10 @@ body {
 	font-family: 'FunctionProDemi', helvetica, sans-serif;
 	margin: 0;
 	padding: 0;
+	/*background: black;*/
+	/*color: white;*/
 }
-
+a { color: black; }
 h1 {
 	font-size: 70px;
 }
@@ -21,7 +23,32 @@ img { width: 100% }
 .h100 { height: 100vh; }
 .topleft { top: 0; left: 0; }
 .black { color: black }
+.white { color: white }
 
-.c-orange {
-	color: rgba(255, 65, 4, 1);
+.c-orange { color: rgba(255, 65, 4, 1); }
+.c-grey { color: #797676; }
+.cb-orange { background-color: rgba(255, 65, 4, 1); }
+.cb-white { background-color: white; }
+
+
+
+.hide-lg {}
+.hide-md {}
+.hide-sm {}
+
+.show-lg { display: none }
+.show-md { display: none }
+.show-sm { display: none }
+
+@media screen and (min-width: 700px) {
+	.show-lg { display: block }
+	.hide-lg { display: none }
+}
+@media screen and (max-width: 700px) {
+	.show-md { display: block }
+	.hide-md { display: none }
+}
+@media screen and (max-width: 450px) {
+	.show-sm { display: block }
+	.hide-sm { display: none }
 }

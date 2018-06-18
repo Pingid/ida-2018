@@ -2,12 +2,26 @@ import React from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
 import Img from 'gatsby-image';
+import Link from 'gatsby-link';
 
+import ProjectHeader from '../components/ProjectHeader';
 import LazyGif from '../components/LazyGif';
 import MountTrigger from '../components/MountTrigger';
 import ScrollGallery from '../components/ScrollGallery';
 
 import '../style/project.css';
+
+const Footer = styled.div`
+	position: fixed;
+	height: 50vh;
+	bottom: calc(-50vh + 2.5vw);
+	width: 100%;
+	transition: .3s bottom;
+	z-index: 10;
+	&:hover {
+		bottom: 0vh;
+	}
+`;
 
 export default ({ data, pathContext, history, match, location }) => {
 	const selected = pathContext.slug;
@@ -26,31 +40,30 @@ export default ({ data, pathContext, history, match, location }) => {
     .map(x => x.node.base);
   const selectedGif = gifs.filter(x => new RegExp(selected).test(x))[0] || null;
 
-  let gifSRC = '';
+  let gifsrc = '';
   if (selectedGif) {
-  	gifSRC = require(`../imgs/optimised-200/${selectedGif}`) || null;
+  	gifsrc = require(`../imgs/optimised/${selectedGif}`) || null;
   }
 
 	const animate = location.search === '?animate';
 	const go = animate ? setTimeout(() => history.replace(location.pathname), 300) : null;
 	
+	const description = (pathContext.unlimitedDescription && pathContext.unlimitedDescription.length > 10) ? 
+		pathContext.unlimitedDescription : pathContext.wordDescription;
+	const formated = description.split('\n').map((x, i) => <p key={i} className="mt0">{x}</p>)
+
+	const projects = data.projects.edges.map(x => x.node).filter(x => x.slug);
+
 	return (
 		<div>
-			<MountTrigger animate={animate}>
-				{ (mounted) => (
-					<div>
-						<div className={classNames('title', { [`title-active`]: mounted, black: gifSRC.length < 1 })}><div>{pathContext.projectName}</div></div>
-						<div className={classNames('gif-wrapper', { ['gif-wrapper-closed']: mounted } )}>
-							<LazyGif preload={selectedGifImage && selectedGifImage.resolutions.base64} gif={gifSRC} />
-						</div>
-					</div>
-				)} 
-			</MountTrigger>
+			<ProjectHeader 
+				animate={animate} 
+				project={Object.assign({}, pathContext, { gif: gifsrc, src: (selectedGifImage && selectedGifImage.resolutions.src), preload: (selectedGifImage && selectedGifImage.resolutions.base64) })} />
 			<div style={{ margin: '0 auto', padding: '2.5vw', maxWidth: '40rem' }}>
-				<p>{pathContext['projectType/materials']}</p>
+				<p className="c-grey">{pathContext['projectType/materials']}</p>
 				<div className="flex">
 					<h4 className="right-align mt1 pr2">{pathContext.yourName}</h4>
-					<p className="mt1">{pathContext.wordDescription}</p>
+					<div className="mt1">{formated}</div>
 				</div>
 				{ 
 					images.map(x => 
@@ -61,13 +74,26 @@ export default ({ data, pathContext, history, match, location }) => {
 					)
 				}
 			</div>
-			<div>
-				{ 
-					// pathContext.images.length > 0 && (
-					// 	<ScrollGallery images={images} />
-					// )
-				}
-			</div>
+			
+			{
+				// <Footer>
+				// <h1 className="m0 center wfit c-orange">projects</h1>
+				// <h1 className="m0 center wfit c-orange">|</h1>
+				// <div className="flex flex-wrap px4 justify-between cb-white" style={{ maxWidth: '40rem', margin: '0 auto', overflowY: 'scroll' }}>
+				// 	{ projects.map(pr => (
+				// 			<div key={pr.slug} className="border-box p1 pl2 mb2" style={{ flex: '0 0 25%' }}>
+				// 				<Link to={'/project/' + pr.slug} style={{ textDecoration: 'none', color: 'black' }}>
+				// 					<div className="flex justify-center">
+				// 						<h3 className="c-orange left wfit m0" style={{ maxWidth: '10rem' }}>{pr.projectName.toLowerCase()}</h3>
+				// 					</div>
+				// 					<p className="m0">by: {pr.yourName}</p>
+				// 				</Link>
+				// 			</div>
+				// 		))
+				// 	}
+				// </div>
+				// </Footer>
+			}
 		</div>
 	)
 }
@@ -117,5 +143,20 @@ export const pageQuery = graphql`
 	      }
 	    }
 	  }
+	  projects: allDataJson {
+      edges {
+        node {
+          slug
+          coordinates {
+            x
+            y
+          }
+          yourName
+          hasGif
+          projectName
+          videoLink
+        }
+      }
+    }
   }
 `;

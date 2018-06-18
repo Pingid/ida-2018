@@ -47,7 +47,7 @@ const optimiseAll = () => {
 }
 
 // prms(optimise)('')
-optimiseAll();
+// optimiseAll();
 // extractAllFirst();
 // console.log(path.basename(files[1]))
 // convertAll(800, 25)
