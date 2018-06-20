@@ -59,7 +59,10 @@ export default ({ data, pathContext, history, match, location }) => {
 			<div style={{ margin: '0 auto', padding: '0 2.5vw', maxWidth: '40rem' }}>
 				<p className="c-grey">{pathContext['projectType/materials']}</p>
 				<div className="flex">
-					<h4 className="right-align mt1 pr2">{pathContext.yourName}</h4>
+					<div>
+						<h4 className="right-align mt1 pr2 mb1">{pathContext.yourName}</h4>
+						{ pathContext.website && <a href={pathContext.website} className="c-blue right-align mt1 pr2">portfolio</a> }
+					</div>
 					<div className="mt1">{formated}</div>
 				</div>
 				{ 
@@ -129,6 +132,7 @@ export const pageQuery = graphql`
             y
           }
           yourName
+          website
           hasGif
           projectName
           videoLink
