@@ -12,7 +12,7 @@ const nameFromFile = n => n.match(/.+?(?=[0-9\.])/) && n.match(/.+?(?=[0-9\.])/)
 
 const gifs = R.compose(
 		R.map(file => file.replace(/\.gif/gi, ''))
-	)(fs.readdirSync(path.resolve(__dirname, '../src/imgs/gifs')));
+	)(fs.readdirSync(path.resolve(__dirname, '../assets/gifs')));
 
 const sort = projects => projects
 	.filter(x => x.projectName && x.mapCoOrdinates) 

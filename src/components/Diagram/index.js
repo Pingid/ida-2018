@@ -27,9 +27,31 @@ export default class Home extends Component {
   componentDidMount() {
     window.addEventListener('mousemove', this.handleMouseMove)
     const canvas = document.getElementById("homebackground");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
     const context = canvas.getContext("2d");
+
+    const devicePixelRatio = window.devicePixelRatio || 1;
+    const backingStoreRatio = context.webkitBackingStorePixelRatio ||
+                        context.mozBackingStorePixelRatio ||
+                        context.msBackingStorePixelRatio ||
+                        context.oBackingStorePixelRatio ||
+                        context.backingStorePixelRatio || 1;
+
+    const ratio = devicePixelRatio / backingStoreRatio;
+    context.scale(3, 3);
+    var oldWidth = window.innerWidth;
+    var oldHeight = window.innerHeight;
+
+    canvas.width = oldWidth * ratio;
+    canvas.height = oldHeight * ratio;
+
+    canvas.style.width = oldWidth + 'px';
+    canvas.style.height = oldHeight + 'px';
+
+    // now scale the context to counter
+    // the fact that we've manually scaled
+    // our canvas element
+    context.scale(ratio, ratio);
+
     const { maxRadius, minRadius } = this.settings;
     window.addEventListener("resize", () => {
       canvas.width = window.innerWidth;

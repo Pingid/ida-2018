@@ -1,0 +1,54 @@
+.title {
+	text-transform: uppercase;
+	position: absolute;
+	top: 0rem;
+	width: 100%;
+	height: 2rem;
+	text-align: center;
+	transition: .5s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.title-active {
+	height: 50vh;
+	top: 2rem;
+	left: 2.5vw;
+	width: calc(100vw - 5vw);
+	font-size: 7vw;
+	color: rgba(255, 255, 255, .7);
+}
+
+.gif-wrapper {
+	position: relative;
+	left: 2.5vw; 
+	top: 2rem; 
+	width: 95vw; 
+	height: calc(70vh);
+	margin-bottom: 4rem;
+	transition: .3s;
+}
+.gif-wrapper-closed { height: 50vh; margin-bottom: 0rem; }
+
+.video-wrapper {
+	margin-top: calc(-70vh + 2rem);
+	transition-delay: 2s; 
+	transition: .3s; 
+	opacity: 1; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+}
+.video-wrapper-closed { height: 0;}
+
+.project-header-wrapper {
+	
+}
+.gif-wrapper .lazy-gif { transition: .3s; opacity: 0; }
+.gif-wrapper .video-wrapper { }
+.gif-wrapper-closed .lazy-gif { transition: .3s; opacity: 1; }
+.gif-wrapper-closed .video-wrapper { opacity: 0; z-index: -10; margin-top: -50vh; }
+
+.video-button { z-index: 11; transition: .2s top; top: -1rem; }
+.video-button-active { top: 2rem; }

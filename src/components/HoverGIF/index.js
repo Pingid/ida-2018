@@ -16,7 +16,7 @@ export default ({ selected, gif, preload }) => {
 	return (
 		<div
 			onClick={goTo}
-			className="absolute cb-orange"
+			className="absolute cb-grey"
 			style={{
 				top: '2.5vw',
 				left: '2.5vw',

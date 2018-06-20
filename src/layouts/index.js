@@ -21,7 +21,8 @@ class TemplateWrapper extends Component {
       ]
     };
     const title = siteData.title;
-    const description = siteData.description
+    const description = siteData.description;
+    const image = require('../imgs/icon.png')
     return (
       <div>
         <noscript>Your browser does not support JavaScript!</noscript>
@@ -35,22 +36,22 @@ class TemplateWrapper extends Component {
             {
               name: "keywords",
               content:
-                "riccardo, canella, riccardocanella, riccardo canella, on the road developer"
+                "ida, liminal, liminal show, interaction design arts, BA exhibition"
             }
           ]}
         >
           <meta name="Description" content={description} />
           <meta name="description" content={description} />
-          <meta property="og:url" content="https://canellariccardo.it" />
+          <meta property="og:url" content="https://liminal2018.com" />
           <meta property="og:title" content={title} />
           <meta property="og:site_name" content={title} />
           <meta property="og:description" content={description} />
-          {/* <meta property="og:image" content={image} /> */}
+          <meta property="og:image" content={image} />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:creator" content="@ricanella92" />
+          <meta name="twitter:creator" content="@dmbeaven" />
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={description} />
-          {/* <meta name="twitter:image" content={image} /> */}
+          <meta name="twitter:image" content={image} />
           <script type="application/ld+json">
             {JSON.stringify(schemaOrgJSONLD)}
           </script>

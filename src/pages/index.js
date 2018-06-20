@@ -8,6 +8,7 @@ import HoverGIF from "../components/HoverGIF";
 import Home from "../components/Home";
 import Logo from "../components/Logo";
 import Mobile from "../components/Mobile";
+import ProjectsGrid from "../components/ProjectsGrid";
 
 const DiagramWrapper = styled.div`
   width: 100vw;
@@ -19,32 +20,10 @@ const DiagramWrapper = styled.div`
 export default class Index extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isMobile: this.mobileCheck(),
-      selected: null,
-    };
+    this.state = { selected: null };
 
     this.handleSelect = this.handleSelect.bind(this);
-    // this.handleScroll = this.handleScroll.bind(this);
   }
-
-  mobileCheck() {
-    // var md = new MobileDetect(window.navigator.userAgent);
-    // console.log(md)
-  }
-
-  componentDidMount() {
-    // const { isMobile } = this.state;
-    // if (window) {
-    //   const _height = window.innerHeight;
-    //   window.addEventListener("resize", () => {
-    //     this.setState({
-    //       isMobile: this.mobileCheck()
-    //     });
-    //   });
-    // }
-  }
-
   render() {
     const { isMobile, selected } = this.state;
     const slideNumber = this.state.Fullpage;
@@ -57,18 +36,20 @@ export default class Index extends Component {
     const gifImages = this.props.data.gifImages.edges
       .map(x => x.node.childImageSharp)
       .filter(x => x);
-    const selectedGifImage = gifImages.filter(x => new RegExp(selected).test(x.resolutions.src))[0] || null;
+
+    const selectedGifImage = gifImages.filter(x => new RegExp(selected + '-\\w{10}', 'gi').test(x.resolutions.src))[0] || null;
 
     const gifs = this.props.data.gifs.edges
       .map(x => x.node.base);
     const selectedGif = gifs.filter(x => new RegExp(selected).test(x))[0] || null;
 
+    const projectStills = this.props.data.projectStills.edges
+      .map(x => x.node.childImageSharp)
+      .filter(x => x);
 
     const innerWidth = typeof window === "undefined" ? 0 : window.innerWidth;
     const innerHeight = typeof window === "undefined" ? 0 : window.innerHeight;
 
-
-    // console.log(selected, selectedGifImage, selectedGif)
     return (
       <div>
         <div className="hide-md">
@@ -88,10 +69,25 @@ export default class Index extends Component {
               isMobile={isMobile}
               onSelect={this.handleSelect} />
           </DiagramWrapper>
-          <Home projects={projects} />
+          <div className="" style={{ zIndex: 11, margin: '0 auto', maxWidth: '50rem' }}>
+            <div className="flex">
+              <h1 className="c-orange m0 p2" style={{ width: '10rem' }}>Interaction Design Arts ></h1>
+              <p className="border-box" style={{ paddingTop: '16rem', paddingLeft: '3rem', maxWidth: '30rem' }} >
+                Interaction Design Arts is a multidisciplinary course, where students are encouraged to work across a variety of media from digital to analogue on a range of different personal and non-personal subjects. This course is perfect for those who wish to not put themselves in specific brackets as practitioners.
+                <br/>
+                <br/>
+                It is this fluidity of IDA that the class of 2018 wishes to embrace in the show 'Liminal'. The works exhibited exist at the border of art and design, combining several introspective and extraspective voices.
+              </p>
+
+            </div>
+            <h1 className="c-orange center">projects</h1>
+            <h1 className="c-orange center">|</h1>
+            <ProjectsGrid projects={projects} />
+            <div className="my4" />
+          </div>
         </div>
         <div className="show-md">
-          <Mobile projects={projects} />
+          <Mobile projects={projects} projectStills={projectStills} />
         </div>
       </div>
     );
@@ -113,6 +109,24 @@ export const pageQuery = graphql`
       }
     }
     gifImages: allFile(filter: { relativeDirectory: { eq: "gif-pic" } }) {
+      edges {
+        node {
+          childImageSharp {
+            ... on ImageSharp {
+              resolutions(width: 200) {
+                base64
+                aspectRatio
+                width
+                height
+                src
+                srcSet
+              }
+            }
+          }
+        }
+      }
+    }
+    projectStills: allFile(filter: { relativeDirectory: { eq: "frames" } }) {
       edges {
         node {
           childImageSharp {

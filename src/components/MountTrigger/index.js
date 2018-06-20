@@ -5,12 +5,13 @@ export default class MountTrigger extends React.Component {
 		super(props);
 		this.state = { mounted: !this.props.animate || false };
 	}
-	componentWillReveiveProps() {
+	componentWillReveiveProps(newProps) {
+		if (newProps.revert) { this.setState({ mounted: false }); }
 		this.setState({ mounted: !this.props.animate || false });
 	}
 	componentDidMount() {
 		if (this.props.active !== false) {
-			setTimeout(() => this.setState({ mounted: true }), 0);
+			setTimeout(() => this.setState({ mounted: true }), this.props.delay || 0);
 		}
 	}
 	render() {

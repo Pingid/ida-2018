@@ -22,15 +22,29 @@ img { width: 100% }
 .w100 { width: 100vw; }
 .h100 { height: 100vh; }
 .topleft { top: 0; left: 0; }
+.align-right { text-align: right }
+
 .black { color: black }
-.white { color: white }
+
+.hide { opacity: 0; transition: .3s }
+.show { opacity: 1; transition: .3s }
 
 .c-orange { color: rgba(255, 65, 4, 1); }
-.c-grey { color: #797676; }
 .cb-orange { background-color: rgba(255, 65, 4, 1); }
+.cf-orange { fill: rgba(255, 65, 4, 1); }
+
+.c-grey { color: #797676; }
+.cb-grey { background-color: #797676; }
+
+.c-blue { color: blue; }
+.cb-blue { background-color: blue; }
+
+.white { color: white }
 .cb-white { background-color: white; }
 
-
+.mobile-image {
+	width: 100%;
+}
 
 .hide-lg {}
 .hide-md {}

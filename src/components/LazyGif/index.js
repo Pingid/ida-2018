@@ -21,7 +21,7 @@ export default class LazyGif extends React.Component {
 		const { preload, gif } = this.props;
 		const { loaded } = this.state;
 		const getURL = () => {
-			if (loaded) return gif;
+			if (loaded && gif) return gif;
 			return preload;
 		}
 		return (

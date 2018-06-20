@@ -4,12 +4,8 @@ import classNames from 'classnames';
 import Img from 'gatsby-image';
 import Link from 'gatsby-link';
 
+import ProjectMenu from '../components/ProjectMenu';
 import ProjectHeader from '../components/ProjectHeader';
-import LazyGif from '../components/LazyGif';
-import MountTrigger from '../components/MountTrigger';
-import ScrollGallery from '../components/ScrollGallery';
-
-import '../style/project.css';
 
 const Footer = styled.div`
 	position: fixed;
@@ -29,16 +25,16 @@ export default ({ data, pathContext, history, match, location }) => {
 	const images = data.projectImages.edges
 		.map(x => x.node.childImageSharp)
 		.filter(x => x)
-		.filter(x => new RegExp(pathContext.slug).test(x.sizes.src));
+		.filter(x => new RegExp('\/static\/' + pathContext.slug).test(x.sizes.src));
 
 	const gifImages = data.gifImages.edges
     .map(x => x.node.childImageSharp)
     .filter(x => x);
-  const selectedGifImage = gifImages.filter(x => new RegExp(selected).test(x.resolutions.src))[0] || null;
+  const selectedGifImage = gifImages.filter(x => new RegExp('\/static\/' + selected, 'gi').test(x.resolutions.src))[0] || null;
 
   const gifs = data.gifs.edges
     .map(x => x.node.base);
-  const selectedGif = gifs.filter(x => new RegExp(selected).test(x))[0] || null;
+  const selectedGif = gifs.filter(x => x.replace('.gif', '') === selected)[0] || null;
 
   let gifsrc = '';
   if (selectedGif) {
@@ -56,10 +52,11 @@ export default ({ data, pathContext, history, match, location }) => {
 
 	return (
 		<div>
+			<ProjectMenu animate={animate} projects={projects} />
 			<ProjectHeader 
 				animate={animate} 
 				project={Object.assign({}, pathContext, { gif: gifsrc, src: (selectedGifImage && selectedGifImage.resolutions.src), preload: (selectedGifImage && selectedGifImage.resolutions.base64) })} />
-			<div style={{ margin: '0 auto', padding: '2.5vw', maxWidth: '40rem' }}>
+			<div style={{ margin: '0 auto', padding: '0 2.5vw', maxWidth: '40rem' }}>
 				<p className="c-grey">{pathContext['projectType/materials']}</p>
 				<div className="flex">
 					<h4 className="right-align mt1 pr2">{pathContext.yourName}</h4>
@@ -68,32 +65,12 @@ export default ({ data, pathContext, history, match, location }) => {
 				{ 
 					images.map(x => 
 						<Img
-							style={{ width: '100%' }}
+							style={{ width: '100%', marginBottom: '1rem' }}
 							key={x.sizes.src} 
 							sizes={x.sizes} />
 					)
 				}
 			</div>
-			
-			{
-				// <Footer>
-				// <h1 className="m0 center wfit c-orange">projects</h1>
-				// <h1 className="m0 center wfit c-orange">|</h1>
-				// <div className="flex flex-wrap px4 justify-between cb-white" style={{ maxWidth: '40rem', margin: '0 auto', overflowY: 'scroll' }}>
-				// 	{ projects.map(pr => (
-				// 			<div key={pr.slug} className="border-box p1 pl2 mb2" style={{ flex: '0 0 25%' }}>
-				// 				<Link to={'/project/' + pr.slug} style={{ textDecoration: 'none', color: 'black' }}>
-				// 					<div className="flex justify-center">
-				// 						<h3 className="c-orange left wfit m0" style={{ maxWidth: '10rem' }}>{pr.projectName.toLowerCase()}</h3>
-				// 					</div>
-				// 					<p className="m0">by: {pr.yourName}</p>
-				// 				</Link>
-				// 			</div>
-				// 		))
-				// 	}
-				// </div>
-				// </Footer>
-			}
 		</div>
 	)
 }

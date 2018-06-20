@@ -5,12 +5,15 @@ import MountTrigger from '../MountTrigger';
 import LazyGif from '../LazyGif';
 import ReactPlayer from 'react-player';
 
+import './index.css';
+
 export default class ProjectHeader extends React.Component {
 	constructor() {
 		super();
-		this.state = { videoClosed: true };
+		this.state = { videoClosed: true, revert: false };
 
 		this.handleScroll = this.handleScroll.bind(this);
+		this.handleAnimationBack = this.handleAnimationBack.bind(this);
 	}
 	componentDidMount() {
 		window.addEventListener('scroll', this.handleScroll)
@@ -22,16 +25,19 @@ export default class ProjectHeader extends React.Component {
 		const top = window.pageYOffset || document.documentElement.scrollTop;
 		if (!this.state.videoClosed && top > 50) { this.setState({ videoClosed: true }) }
 	}
+	handleAnimationBack() {
+		this.setState({ revert: true });
+	}
 	render() {
 		const { project, animate } = this.props;
-		const { videoClosed } = this.state;
+		const { videoClosed, revert } = this.state;
 		return (
-			<MountTrigger animate={animate}>
+			<MountTrigger animate={animate} revert={revert}>
 				{ (mounted) => (
-					<div>
+					<div className="project-header-wrapper">
 						<div className={classNames('gif-wrapper', { ['gif-wrapper-closed']: (mounted && videoClosed) } )}>
 							<div className="wfit hfit lazy-gif"><LazyGif preload={project.preload} gif={videoClosed ? project.gif : project.src} /></div>
-							<div className="video-wrapper">
+							<div className={classNames('video-wrapper', { ['video-wrapper-closed']: videoClosed })}>
 								<ReactPlayer playing={!videoClosed} width="100%" height="70vh" style={{ background: 'transparent' }} url={project.videoLink} />
 							</div>
 						</div>
@@ -42,9 +48,8 @@ export default class ProjectHeader extends React.Component {
 						{ project.videoLink && (
 								<div
 									onClick={() => project.videoLink && this.setState({ videoClosed: !videoClosed })}
-									className="wfit center relative" 
-									style={{ top: '-2rem', zIndex: 10 }}>
-									<h3 className={classNames('caps', { white: videoClosed })}>{videoClosed ? 'play video' : 'close video'}</h3>
+									className={classNames("wfit center relative video-button", { ['video-button-active']: !videoClosed })}>
+									<h3 style={{ cursor: 'pointer' }} className={classNames('caps', { white: videoClosed })}>{videoClosed ? 'play video' : ''}</h3>
 								</div>
 						)}
 					</div>

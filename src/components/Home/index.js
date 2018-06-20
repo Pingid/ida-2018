@@ -2,29 +2,15 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 
-const Wedge = styled.div`
-	background: green;
-	width: 10rem;
-	height: 10rem;
-	float: left;
-	transform: rotateZ(10deg);
-`;
-
-const Copy = styled.p`
-	box-sizing: border-box;
-	padding-top: 14rem;
-	padding-left: 3rem;
-	max-width: 37rem;
-`
 
 export default ({ projects }) => {
 	return (
 		<div className="" style={{ zIndex: 11, margin: '0 auto', maxWidth: '50rem' }}>
 			<div className="flex">
 				<h1 className="c-orange m0 p2" style={{ width: '10rem' }}>Interaction Design Arts ></h1>
-				<Copy>
+				<p className="border-box" style={{ paddingTop: '14rem', paddingLeft: '3rem', maxWidth: '37rem' }} >
 					In publishing and graphic design, lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document without relying on meaningful content. Replacing the actual content with placeholder text allows designers to design the form of the content before the content itself has been produced.
-				</Copy>
+				</p>
 			</div>
 			<h1 className="c-orange center">projects</h1>
 			<h1 className="c-orange center">|</h1>

@@ -24,6 +24,10 @@ const Text = styled.div`
 	text-transform: uppercase;
 	padding: .5rem;
 	color: #797676;
+	background: white;
+	// height: 2.5vw;
+	// display: flex;
+	// align-items: center;
 `
 const Square = styled.div`
 	position: relative;
@@ -45,13 +49,13 @@ export default class Axes extends React.Component {
 		return (
 			<div className="absolute" style={{ pointerEvents: 'none', zIndex: 0, top: 0, left: 0 }}>
 				<div className="absolute border-box w100 h100 flex justify-between items-center">
-					<Text style={{ width: '20rem' }}>{left}</Text>
+					<Text>{left}</Text>
 					<div className="h100 flex flex-column justify-between center" style={{ }}>
 						<Text>{top}</Text>
 						<Title active={bottom}>liminal</Title>
 						<Text>{bottom}-</Text>
 					</div>
-					<Text style={{ width: '20rem', textAlign: 'right' }}>{right}</Text>
+					<Text className="align-right">{right}</Text>
 				</div>
 			</div>
 		)

@@ -179,7 +179,7 @@
     "mapCoOrdinates": "(-20, 22)",
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Luisa Charles & Miryana Ivanova>Luisa & Miryana.gif",
     "slug": "luisa-charles-and-miryana-ivanova",
-    "hasGif": false,
+    "hasGif": true,
     "coordinates": {
       "x": 0.4,
       "y": 0.61
@@ -224,7 +224,7 @@
     "mapCoOrdinates": "(64, 13)",
     "imagePaths": "My Drive>Degree Show 2018>Website Assets>Lisa Melkumov & Lou-Anne Le Mener>Lisa and Lou-Anne.gif",
     "slug": "lisa-melkumov-and-lou-anne-le-mener",
-    "hasGif": false,
+    "hasGif": true,
     "coordinates": {
       "x": 0.82,
       "y": 0.565
@@ -247,7 +247,7 @@
   {
     "yourName": "Lucio Martus Alonso",
     "projectName": "Silhouette",
-    "wordDescription": "One of the biggest challenges as a student in London is facing how to finance and live in the big city. In this installation I aim to showcase the data I have been recording for the last three years of my degree. With this, visitors are invited to explore my experience and my adaptation into independance in an interactive and visual experience. Each piece represents a payment made, which all together create a visual scale of where the money went. And with each graph showing different aspects of consumption, people will be able to see where  the money went and how I spent it.",
+    "wordDescription": "Silhouette is an interactive installation using projection and motion tracking devices. Attendees are invited to immerse themselves into my photography by moving in front of the image. Each person's silhouette will appear on screen, revealing the picture behind it.\n\nAs Barthes defended in his book \"Camera Lucida: Reflections on Photography\", the perception of one photograph changes depending on one's experiences and memories. One photo, seen by many, will become a different photo for each person, and it's our unique shape, silhouette or state that defines how this specific piece is seen. ",
     "projectType/materials": "Screen-based Installation",
     "socialMedia/websiteLinks": "https://www.behance.net/lumartus950a3f, Instagram/Twitter: @luciomartus",
     "mapCoOrdinates": "(100, 67)",
@@ -291,8 +291,8 @@
   },
   {
     "yourName": "Tianyi Liu",
-    "projectName": "a Garden beyond four quartets",
-    "wordDescription": "Following on a journey with me to walk through this garden bridging among real, fictional and spiritual world. I try to cultivate my own garden based on metaphor of garden, and situating between essence and phenomenon of it with found memories, real life experience, literary and myth. This is a study of garden related to human condition by visiting mine and other people’s experience and memories in different time and space. It's a jouney of learning a way of being and seeing things under the image again, and walking out from garden of Eden to garden of real life in this era. The garden triggers me to start this journey, while it also greets me, and derives more from me. Slowing down you pace and give the space a time to echo, repercussion, and mirror your mind here.",
+    "projectName": "a walk between two Garden",
+    "wordDescription": "This is Immersive Installation with transformed found objects \nFollowing me on a journey to walk through this garden, bridging the real, fictional and spiritual worlds. I have cultivated my own garden based on metaphors of what a garden is - situated between the essence and phenomenon of it, with found objects, real life experiences, literature and myths. This is a study of gardens related to the human condition. Visit mine and other people’s experiences and memories in a different time and space. It's a journey of learning, a way of being and seeing things below the surface, and walking out from the garden of Eden to garden of real life in this era. The garden catalyses the start of this journey, whilst simultaneously greeting me, and encourages more from me. Slow down your pace, give the space some time to echo, and reflect your mind here.\n\n",
     "projectType/materials": "museum set up displaying collection with transformed photograph sculpture, found objects,  archives, walking and mapping experience  ",
     "socialMedia/websiteLinks": "instagram: chipsandyogurt                 http://cargocollective.com/chipsandyogurt",
     "mapCoOrdinates": "(-23, 70)",
