@@ -49,7 +49,7 @@ export default ({ data, pathContext, history, match, location }) => {
 	const formated = description.split('\n').map((x, i) => <p key={i} className="mt0">{x}</p>)
 
 	const projects = data.projects.edges.map(x => x.node).filter(x => x.slug);
-
+	
 	return (
 		<div>
 			<ProjectMenu animate={animate} projects={projects} />
