@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
+import classNames from 'classnames';
 import MobileDetect from 'mobile-detect';
 
 import Diagram from "../components/Diagram";
@@ -10,29 +11,37 @@ import Logo from "../components/Logo";
 import Mobile from "../components/Mobile";
 import ProjectsGrid from "../components/ProjectsGrid";
 
-const DiagramWrapper = styled.div`
+const DiagramWrapperStyles = styled.div`
   width: 100vw;
   height: 100vh;
-  transition: .2s height;
+  background: white;
   overflow: hidden;
 `;
+
+class DiagramWrapper extends Component {
+  componentDidMount() {
+    console.log('hello')
+    this.props.mounted();
+  }
+  render() { return <DiagramWrapperStyles className={this.props.className}>{this.props.children}</DiagramWrapperStyles> }
+}
 
 export default class Index extends Component {
   constructor(props) {
     super(props);
-    this.state = { selected: null };
+    this.state = { selected: null, mountedDiagram: false };
 
     this.handleSelect = this.handleSelect.bind(this);
   }
   render() {
-    const { isMobile, selected } = this.state;
+    const { mountedDiagram, selected } = this.state;
     const slideNumber = this.state.Fullpage;
 
     const projects = this.props.data.allDataJson.edges
       .map(x => x.node)
       .filter(x => x.coordinates);
     const selectedProject = projects.filter(x => x.slug === selected)[0] || null;
-    
+
     const gifImages = this.props.data.gifImages.edges
       .map(x => x.node.childImageSharp)
       .filter(x => x);
@@ -49,13 +58,13 @@ export default class Index extends Component {
 
     const innerWidth = typeof window === "undefined" ? 0 : window.innerWidth;
     const innerHeight = typeof window === "undefined" ? 0 : window.innerHeight;
-
+    console.log(mountedDiagram)
     return (
       <div>
         <div className="hide-md">
-          <DiagramWrapper closed={false}>
+          <DiagramWrapper className={classNames({ hide: !mountedDiagram, show: mountedDiagram })} mounted={() => this.setState({ mountedDiagram: true })}>
             <HoverGIF selected={selected} gif={selectedGif} preload={selectedGifImage} />
-            <Axis 
+            <Axis
               left={selected ? selectedProject.yourName.split(' ')[0] : 'Fiction'}
               top={selected ? selectedProject.projectName : 'Outcome-led'}
               right={selected ? selectedProject.yourName.split(' ')[1] : 'Reality'}
@@ -66,10 +75,9 @@ export default class Index extends Component {
               height={innerHeight}
               lineThreshold={innerWidth / 4}
               projects={projects}
-              isMobile={isMobile}
               onSelect={this.handleSelect} />
           </DiagramWrapper>
-          <div className="" style={{ zIndex: 11, margin: '0 auto', maxWidth: '50rem' }}>
+          <div className={classNames({ hide: !mountedDiagram, show: mountedDiagram })} style={{ zIndex: 11, margin: '0 auto', maxWidth: '50rem' }}>
             <div className="flex">
               <h1 className="c-orange m0 p2" style={{ width: '10rem' }}>Interaction Design Arts ></h1>
               <p className="border-box" style={{ paddingTop: '16rem', paddingLeft: '3rem', maxWidth: '30rem' }} >

@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 
-import 'basscss/css/basscss.css';
 import "../style/fonts.css";
 import "../style/index.css";
+// import 'basscss/css/basscss.css';
 
 import siteData from '../../assets/data/site.json';
 
@@ -55,6 +55,7 @@ class TemplateWrapper extends Component {
           <script type="application/ld+json">
             {JSON.stringify(schemaOrgJSONLD)}
           </script>
+          <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet" />
         </Helmet>
         {children()}
       </div>

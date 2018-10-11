@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Riccardo Canella <canella_riccardo@icloud.com>",
   "dependencies": {
-    "basscss": "^8.0.4",
+    "basscss": "^8.0.10",
     "classnames": "^2.2.6",
     "fullpage-react": "^3.0.33",
     "gatsby": "^1.9.223",
